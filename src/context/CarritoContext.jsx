@@ -1,0 +1,53 @@
+"use client";
+
+import { createContext, useContext, useState } from "react";
+
+const CarritoContext = createContext();
+
+export function CarritoProvider({ children }) {
+  const [items, setItems] = useState([]); 
+  const [abierto, setAbierto] = useState(false); 
+
+  const agregarAlCarrito = (producto) => {
+    setItems((prev) => {
+      const existe = prev.find((item) => item.id === producto.id);
+
+      if (existe) {
+        return prev.map((item) =>
+          item.id === producto.id
+            ? { ...item, cantidad: item.cantidad + 1 }
+            : item
+        );
+      }
+
+      return [...prev, { ...producto, cantidad: 1 }];
+    });
+  };
+ const quitarDelCarrito = (id) => {
+  setItems((prev) => prev.filter((item) => item.id !== id));
+};
+
+  return (
+    <CarritoContext.Provider
+      value={{
+        items,              
+        agregarAlCarrito,   
+        abierto,           
+        setAbierto,
+        quitarDelCarrito,
+        
+      }}
+    >
+      {children}
+    </CarritoContext.Provider>
+  );
+}
+
+export function useCarrito() {
+  const context = useContext(CarritoContext);
+  if (!context) {
+    throw new Error("useCarrito debe usarse dentro de <CarritoProvider>");
+  }
+  return context;
+}
+
