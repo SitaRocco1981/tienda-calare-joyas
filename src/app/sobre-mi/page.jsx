@@ -43,8 +43,8 @@ export default function SobreMiPage() {
         {/* TEXTO INTRO */}
         <div className="space-y-6 text-blue-950 font-serif">
           <p className="text-xl leading-relaxed">
-            Llegué a la orfebrería el año 2021, primero desde la curiosidad.
-            Siempre, de alguna u otra forma, me confeccionaba algo parecido a una joya, ya sea de tela, mostacillas o tejidas, desde niña que me llamaban la atención, hasta que en un momento de la vida se presentó la oportunidad de aprender este hermoso oficio .
+            Llegué a la orfebrería el año 2021 por curiosidad, necesidad de reinventarme después de estar años trabajando en una oficina y porque
+            siempre, de alguna u otra forma, me confeccionaba algo parecido a una joya, ya sea de tela, mostacillas o tejidas, desde niña que me llamaban la atención.
           </p>
 
           <p className="text-xl leading-relaxed">
