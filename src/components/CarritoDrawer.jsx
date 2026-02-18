@@ -3,17 +3,15 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useCarrito } from "@/context/CarritoContext";
-import { useRouter } from "next/navigation"; 
-
+import { useRouter } from "next/navigation";
 
 export default function CarritoDrawer() {
   const { items, abierto, setAbierto, quitarDelCarrito } = useCarrito();
-  const router = useRouter(); 
-  
+  const router = useRouter();
 
   const calcularTotal = () => {
     return items.reduce((total, item) => {
-      const precioNumerico = item.precio; 
+      const precioNumerico = item.precio;
       return total + precioNumerico * item.cantidad;
     }, 0);
   };
@@ -46,7 +44,7 @@ export default function CarritoDrawer() {
               </h2>
               <button
                 onClick={() => setAbierto(false)}
-                className="text-blue-950 text-xl"
+                className="text-blue-950 text-xl cursor-pointer"
               >
                 ✕
               </button>
@@ -85,7 +83,7 @@ export default function CarritoDrawer() {
 
                       <button
                         onClick={() => quitarDelCarrito(item.id)}
-                        className="text-sm text-rose-400 hover:underline mt-1"
+                        className="text-sm text-rose-400 hover:underline mt-1 cursor-pointer"
                       >
                         Quitar
                       </button>
@@ -107,11 +105,11 @@ export default function CarritoDrawer() {
 
                 <button
                   onClick={() => {
-                    setAbierto(false);         
-                    router.push("/transferencia"); 
-                   
+                    localStorage.setItem("cart", JSON.stringify(items));
+                    setAbierto(false);
+                    router.push("/checkout");
                   }}
-                  className="mt-4 w-full bg-blue-950 text-amber-50 py-3 font-serif hover:opacity-90 transition"
+                  className="mt-4 w-full bg-blue-950 text-amber-50 py-3 font-serif hover:opacity-90 transition cursor-pointer"
                 >
                   Comprar
                 </button>

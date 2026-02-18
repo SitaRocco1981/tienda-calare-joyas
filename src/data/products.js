@@ -62,4 +62,5 @@ export const products = [
     imagenes:["/assets/hero.png"],
     descripción: "Anillo elaborado en plata950 con engaste de cuarto rutilado."
   },
+
 ];

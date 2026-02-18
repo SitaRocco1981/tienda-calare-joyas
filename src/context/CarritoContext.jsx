@@ -27,14 +27,24 @@ export function CarritoProvider({ children }) {
   setItems((prev) => prev.filter((item) => item.id !== id));
 };
 
+  const vaciarCarrito = () => {
+    setItems([]);
+  };
+
+
+
   return (
     <CarritoContext.Provider
       value={{
         items,              
-        agregarAlCarrito,   
-        abierto,           
-        setAbierto,
-        quitarDelCarrito,
+        items,
+    agregarAlCarrito,
+    quitarDelCarrito,
+    vaciarCarrito,   
+    abierto,
+    setAbierto,
+
+
         
       }}
     >

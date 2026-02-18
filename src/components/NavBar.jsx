@@ -38,7 +38,7 @@ export default function Navbar() {
         <Link href="/">
           <Image
             src="/assets/logo-calare.png"
-            alt="Calaré"
+            alt="Calare"
             width={220}
             height={80}
             priority
@@ -96,7 +96,7 @@ export default function Navbar() {
           <button
             aria-label="Carrito"
             onClick={() => setAbierto(true)}
-            className="relative text-amber-50 hover:text-rose-300 transition"
+            className="relative text-amber-50 hover:text-rose-300 transition cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

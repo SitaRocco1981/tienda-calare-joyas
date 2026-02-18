@@ -54,7 +54,7 @@ export default function SobreMiPage() {
           </p>
         </div>
 
-        {/* LÍNEA DE TIEMPO */}
+       
         <Timeline />
 
       

@@ -80,7 +80,7 @@ export default function Suscribete() {
             <button
               type="submit"
               disabled={status === "loading"}
-              className="px-6 py-3 bg-rose-300 text-blue-900 uppercase text-sm tracking-wide hover:bg-night/90 transition disabled:opacity-50"
+              className="px-6 py-3 cursor-pointer bg-rose-300 text-blue-900 uppercase text-sm tracking-wide hover:bg-night/90 transition disabled:opacity-50"
             >
               {status === "loading" ? "Enviando..." : "Suscribirme"}
             </button>

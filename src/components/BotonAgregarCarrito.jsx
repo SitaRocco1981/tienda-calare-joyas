@@ -14,7 +14,7 @@ export default function BotonAgregarCarrito({ producto }) {
       <button
         onClick={() => agregarAlCarrito(producto)}
         disabled={yaEnCarrito}
-        className={`px-8 py-4 uppercase tracking-wide transition
+        className={`px-8 py-4 cursor-pointer uppercase tracking-wide transition
           ${
             yaEnCarrito
               ? "bg-gray-300 text-gray-600 cursor-not-allowed"

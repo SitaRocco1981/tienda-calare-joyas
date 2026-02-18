@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -7,14 +8,16 @@ export default function Footer() {
 
         {/* Logo */}
         <div className="flex justify-center mb-10">
+          <Link href="/">
           <Image
             src="/assets/logo-calare.png"
             alt="Calare joyería artesanal"
             width={160}
             height={80}
             priority
-            className="h-14 lg:h-20 w-auto"
+            className="h-14 lg:h-20 w-auto cursor-pointer"
           />
+          </Link>
         </div>
 
         {/* Menú */}
@@ -28,7 +31,7 @@ export default function Footer() {
         {/* Instagram */}
            <div className="flex justify-center mb-10">
           <a
-            href="https://instagram.com"
+            href="https://instagram.com/calare.joyas?igsh=MWw1ZHhmazhxcDYxMg=="
             target="_blank"
             rel="noreferrer"
             aria-label="Instagram"
